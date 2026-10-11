@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Alan Sheinfil, PhD | Clinical Psychologist | Hackensack, NJ</title>
+  <meta name="description" content="Licensed clinical psychologist specializing in trauma, anxiety, and substance use. In-person and telehealth in Hackensack, NJ. Free 15-minute consultation." />
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,500;0,600;1,400&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #6a6e4d;
+      --alt-brand: #b4b0a0;
+      --heading: #353e2d;
+      --text: #353e2d;
+      --primary: #6a6e4d;
+      --secondary: #353e2d;
+      --border: #dedcdc;
+      --subtle-bg: #f5f4f0;
+      --extra: #c8b49e;
+      --white: #ffffff;
+      --font-heading: 'Libertinus Serif', serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      background: var(--white);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--heading);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 16px 0;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 55px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brand); }
+
+    .nav-links a.btn-primary {
+      color: #ffffff;
+      background: var(--primary);
+      font-weight: 600;
+    }
+
+    .nav-links a.btn-primary:hover {
+      background: var(--heading);
+      color: #ffffff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--subtle-bg);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 160px 0 100px;
+      background: var(--subtle-bg);
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      max-width: 650px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 410px;
+      margin-bottom: 36px;
+      color: var(--text);
+    }
+
+    .hero .btn { font-size: 1rem; padding: 14px 32px; }
+
+    .hero-phone {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .hero-phone a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero-phone a:hover { text-decoration: underline; }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 0;
+    }
+
+    section h2 {
+      font-size: 42px;
+      margin-bottom: 24px;
+    }
+
+    section p {
+      max-width: none;
+      margin-bottom: 16px;
+    }
+
+    .section-bridge {
+      background: var(--white);
+    }
+
+    .section-about {
+      background: var(--subtle-bg);
+    }
+
+    .section-fees {
+      background: var(--white);
+    }
+
+    .section-contact {
+      background: var(--subtle-bg);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .specialties {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .specialties h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .specialties ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .specialties li {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* APPROACH */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .approach-list {
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .approach-list li {
+      font-size: 0.95rem;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .approach-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--extra);
+    }
+
+    /* FEES */
+    .fees-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 40px;
+      max-width: none;
+    }
+
+    .fees-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--heading);
+    }
+
+    .fees-card p {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .fees-card .note {
+      font-size: 0.85rem;
+      color: var(--brand);
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .payment-methods {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--brand);
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info {
+      font-size: 0.95rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 12px;
+    }
+
+    .contact-info a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover { text-decoration: underline; }
+
+    .contact-info .label {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      color: var(--heading);
+    }
+
+    .form-wrapper {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px;
+    }
+
+    /* FORM */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--heading);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--brand);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-top: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer a {
+      color: var(--alt-brand);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+
+      .hero { padding: 130px 0 70px; }
+      .hero h1 { font-size: 32px; }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .about-photo {
+        aspect-ratio: 3/2;
+        order: -1;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .form-wrapper {
+        padding: 24px;
+      }
+
+      section { padding: 60px 0; }
+      section h2 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="Images/Header Logo.svg" alt="Bergen Psychology Services" height="40" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#fees">Fees</a></li>
+        <li><a href="#contact" class="btn btn-primary">Request a Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Collaborative, practical therapy for trauma, anxiety, and substance use.</h1>
+      <p>Licensed clinical psychologist in Hackensack, NJ. In-person and secure telehealth.</p>
+      <a href="#contact" class="btn btn-primary">Request a Free 15-Minute Call</a>
+      <p class="hero-phone">Or call directly: <a href="tel:+12013662442">(201) 366-2442</a></p>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section-bridge" id="approach">
+    <div class="container">
+      <h2>How I Work</h2>
+      <div class="approach-grid">
+        <div>
+          <p>Many of my clients feel overwhelmed, stuck, or disconnected from the life they want to be living. My approach is collaborative and practical. I work with you to better understand what is keeping you stuck and what you would like to be different.</p>
+          <p>Depending on what brings you to therapy, our work may involve learning new ways to manage stress and difficult emotions, making sense of past experiences, changing patterns that are no longer working, or navigating challenges in relationships, work, and everyday life.</p>
+          <p style="margin-top:24px;">I draw primarily on <strong>Cognitive Behavioral Therapy (CBT)</strong> and <strong>Acceptance and Commitment Therapy (ACT)</strong> to help you recognize unhelpful patterns, respond more flexibly to difficult thoughts and emotions, and take meaningful action toward your goals.</p>
+        </div>
+        <ul class="approach-list">
+          <li>Cognitive Behavioral (CBT)</li>
+          <li>Acceptance &amp; Commitment (ACT)</li>
+          <li>Prolonged Exposure Therapy</li>
+          <li>Cognitive Processing (CPT)</li>
+          <li>Dialectical Behavior (DBT)</li>
+          <li>Exposure Response Prevention (ERP)</li>
+          <li>Mindfulness-Based (MBCT)</li>
+          <li>Motivational Interviewing</li>
+          <li>Psychological Testing &amp; Evaluation</li>
+          <li>Unified Protocol (UP)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section-about" id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div>
+          <p>Dr. Alan Sheinfil is a licensed clinical psychologist and professor at Fairleigh Dickinson University. He received his PhD from Syracuse University and completed a postdoctoral fellowship at the Michael E. DeBakey VA Medical Center. His work emphasizes evidence-based treatment for trauma, substance use, and anxiety.</p>
+          <p>He is licensed in New Jersey, New York, and Texas, and works with teens, adults, and elders in an individualized setting.</p>
+
+          <div class="specialties">
+            <h3>Top Specialties</h3>
+            <ul>
+              <li>Trauma &amp; PTSD</li>
+              <li>Substance Use</li>
+              <li>Anxiety</li>
+              <li>Depression</li>
+              <li>Stress</li>
+              <li>Emotional Regulation</li>
+              <li>Life Transitions</li>
+              <li>Veterans</li>
+              <li>LGBTQ+</li>
+              <li>Chronic Illness &amp; Pain</li>
+              <li>Psychological Testing</li>
+            </ul>
+          </div>
+        </div>
+        <img class="about-photo" src="Images/HeadShot-alans (1).png" alt="Dr. Alan Sheinfil, Psychologist, PhD" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FEES -->
+  <section class="section-fees" id="fees">
+    <div class="container">
+      <h2>Fees &amp; Insurance</h2>
+      <div class="fees-card">
+        <h3>Individual Sessions</h3>
+        <p>$250 per 50-minute session. Sliding scale available — apply if you may be eligible.</p>
+        <p class="payment-methods">Payment methods: ACH, Amex, Cash, Check, Discover, HSA, Mastercard, PayPal, Venmo, Visa, Zelle</p>
+
+        <h3 style="margin-top:28px;">Insurance</h3>
+        <p>I am an out-of-network provider and do not currently accept insurance directly. I am happy to provide a detailed superbill after each session that you can submit to your insurance company for possible out-of-network reimbursement.</p>
+        <p class="note">If you're unsure whether your plan covers out-of-network therapy, I'm happy to help you review your benefits during the free consultation call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section-contact" id="contact">
+    <div class="container">
+      <h2>Request a Free Consultation</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="label">Office</span>
+          <p>Bergen Psychology Services<br>2 University Plaza Drive, Suite 100<br>Hackensack, NJ 07601</p>
+
+          <span class="label">Phone</span>
+          <p><a href="tel:+12013662442">(201) 366-2442</a></p>
+
+          <span class="label">Availability</span>
+          <p>In-person and secure telehealth. Flexible scheduling designed to fit your life.</p>
+
+          <span class="label">Licensed In</span>
+          <p>New Jersey · New York · Texas</p>
+        </div>
+
+        <div class="form-wrapper">
+          <form action="https://api.staticforms.dev/submit" method="POST">
+            <input type="hidden" name="apiKey" value="sf_63b4e4f613d7fedf5c03d8c2" />
+            <input type="hidden" name="subject" value="Bergen Psych Consult Request" />
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="best-time">Preferred time to reach you</label>
+              <select id="best-time" name="best-time">
+                <option value="">Select a preference…</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+                <option>No preference</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (optional)</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Request</button>
+            <p class="form-note">Please do not include sensitive personal or health information in this form. Submitting a request does not establish a therapist-client relationship. If you are experiencing an emergency, please contact emergency services.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Bergen Psychology Services · Dr. Alan Sheinfil, PhD · Hackensack, NJ</p>
+<p style="margin-top:8px;"><a href="privacy.html">Privacy Policy</a></p>   
+    </div>
+  </footer>
+
+</body>
+</html>   
