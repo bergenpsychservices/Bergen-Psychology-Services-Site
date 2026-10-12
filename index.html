@@ -135,6 +135,8 @@
       background: var(--subtle-bg);
     }
 
+    .mobile-cta { display: none; }
+
     /* HERO */
     .hero {
       padding: 160px 0 100px;
@@ -143,7 +145,7 @@
 
     .hero h1 {
       font-size: 54px;
-      line-height: 1.1;
+      line-height: 1;
       max-width: 650px;
       margin-bottom: 20px;
     }
@@ -215,6 +217,30 @@
       aspect-ratio: 4/5;
       object-fit: cover;
       border-radius: 8px;
+    }
+
+    .credentials {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .credentials h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .credentials p {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .credentials .licensure {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--brand);
+      font-weight: 500;
     }
 
     .specialties {
@@ -413,8 +439,28 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
 
-      .hero { padding: 130px 0 70px; }
-      .hero h1 { font-size: 32px; }
+      .mobile-cta {
+        display: inline-block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+        background: var(--primary);
+        color: var(--white);
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+
+      .hero { padding: 120px 0 60px; }
+      .hero h1 { font-size: 28px; line-height: 1.2; }
+      .hero p { font-size: 1rem; max-width: none; }
+
+      section { padding: 50px 0; }
+      section h2 { font-size: 28px; margin-bottom: 16px; }
 
       .about-grid {
         grid-template-columns: 1fr;
@@ -422,7 +468,9 @@
       }
 
       .about-photo {
-        aspect-ratio: 3/2;
+        aspect-ratio: 4/5;
+        max-width: 320px;
+        margin: 0 auto;
         order: -1;
       }
 
@@ -431,17 +479,24 @@
         gap: 32px;
       }
 
+      .approach-list { gap: 8px; }
+      .approach-list li { font-size: 0.9rem; }
+
+      .fees-card { padding: 24px; }
+
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
       }
 
-      .form-wrapper {
-        padding: 24px;
-      }
+      .form-wrapper { padding: 24px; }
 
-      section { padding: 60px 0; }
-      section h2 { font-size: 32px; }
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        padding: 14px 16px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -465,7 +520,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>Collaborative, practical therapy for trauma, anxiety, and substance use.</h1>
+      <h1>Therapy that starts where you are and supports where you want to go.</h1>
       <p>Licensed clinical psychologist in Hackensack, NJ. In-person and secure telehealth.</p>
       <a href="#contact" class="btn btn-primary">Request a Free 15-Minute Call</a>
       <p class="hero-phone">Or call directly: <a href="tel:+12013662442">(201) 366-2442</a></p>
@@ -475,12 +530,13 @@
   <!-- APPROACH -->
   <section class="section-bridge" id="approach">
     <div class="container">
-      <h2>How I Work</h2>
+      <h2>Working With Me</h2>
       <div class="approach-grid">
         <div>
-          <p>Many of my clients feel overwhelmed, stuck, or disconnected from the life they want to be living. My approach is collaborative and practical. I work with you to better understand what is keeping you stuck and what you would like to be different.</p>
-          <p>Depending on what brings you to therapy, our work may involve learning new ways to manage stress and difficult emotions, making sense of past experiences, changing patterns that are no longer working, or navigating challenges in relationships, work, and everyday life.</p>
-          <p style="margin-top:24px;">I draw primarily on <strong>Cognitive Behavioral Therapy (CBT)</strong> and <strong>Acceptance and Commitment Therapy (ACT)</strong> to help you recognize unhelpful patterns, respond more flexibly to difficult thoughts and emotions, and take meaningful action toward your goals.</p>
+          <p>You might be dealing with more than feels doable right now. Reaching out to talk about what's been happening for you is a meaningful step.</p>
+          <p>I don't approach therapy as repairing something broken, but as making sense of the patterns that aren't serving you, and learning how to do things differently. My role is to be alongside you as we focus on understanding any obstacles you are experiencing, identifying the changes you'd really like to see, and helping your life feel more authentic.</p>
+          <p>In our sessions, we'll focus on exploring what feels hard to move through right now and what you're hoping will feel different over time. That might look like learning new ways to manage stress and difficult emotions, understanding how past experiences are affecting you now, changing habits or reactions that keep repeating and causing pain, or working through the tension or conflict that shows up with partners, family, colleagues, or in the day-to-day. </p>
+       <p style="margin-top:24px;">I draw primarily on <strong>Cognitive Behavioral Therapy (CBT)</strong> and <strong>Acceptance and Commitment Therapy (ACT).</strong> In practice, that means we'll work to notice habits of thinking and reacting that aren't serving you, build flexibility around intense or confusing emotions, and make changes that align with your values and priorities.
         </div>
         <ul class="approach-list">
           <li>Cognitive Behavioral (CBT)</li>
@@ -501,11 +557,22 @@
   <!-- ABOUT -->
   <section class="section-about" id="about">
     <div class="container">
-      <h2>About</h2>
+      <h2>About Me</h2> 
       <div class="about-grid">
         <div>
-          <p>Dr. Alan Sheinfil is a licensed clinical psychologist and professor at Fairleigh Dickinson University. He received his PhD from Syracuse University and completed a postdoctoral fellowship at the Michael E. DeBakey VA Medical Center. His work emphasizes evidence-based treatment for trauma, substance use, and anxiety.</p>
-          <p>He is licensed in New Jersey, New York, and Texas, and works with teens, adults, and elders in an individualized setting.</p>
+          <p>
+Hi, I'm Dr. Alan Sheinfil, a licensed clinical psychologist in Hackensack, NJ. I support clients in a space where we can talk openly and work actively on the challenges you’re facing.</p>
+<p>My goal is for our sessions to be a space where you can express yourself fully and feel seen, understood, and responded to.</p>
+<p>I work with teens, adults, and older adults in an individualized setting, planned around your specific goals and circumstances.</p>
+
+<div class="credentials">
+    <h3>Education &amp; Training</h3>
+    <p>PhD, Clinical Psychology — Syracuse University</p>
+    <p>Postdoctoral Fellowship — Michael E. DeBakey VA Medical Center</p>
+    <p>Predoctoral Internship — UT Health Science Center, Houston</p>
+    
+    <p class="licensure">Licensed: New Jersey · New York · Texas</p>
+  </div>
 
           <div class="specialties">
             <h3>Top Specialties</h3>
@@ -535,12 +602,12 @@
       <h2>Fees &amp; Insurance</h2>
       <div class="fees-card">
         <h3>Individual Sessions</h3>
-        <p>$250 per 50-minute session. Sliding scale available — apply if you may be eligible.</p>
+        <p>$250 per 50-minute session</p>
         <p class="payment-methods">Payment methods: ACH, Amex, Cash, Check, Discover, HSA, Mastercard, PayPal, Venmo, Visa, Zelle</p>
 
         <h3 style="margin-top:28px;">Insurance</h3>
-        <p>I am an out-of-network provider and do not currently accept insurance directly. I am happy to provide a detailed superbill after each session that you can submit to your insurance company for possible out-of-network reimbursement.</p>
-        <p class="note">If you're unsure whether your plan covers out-of-network therapy, I'm happy to help you review your benefits during the free consultation call.</p>
+        <p>I'm an out-of-network provider and don't bill insurance directly. After each session, I can provide a detailed superbill you may submit to your insurance company for possible reimbursement.</p>
+        <p class="note">If you're not sure whether your plan covers out-of-network therapy, I'm happy to help you review your options during our free consultation call.</p>
       </div>
     </div>
   </section>
@@ -548,7 +615,7 @@
   <!-- CONTACT -->
   <section class="section-contact" id="contact">
     <div class="container">
-      <h2>Request a Free Consultation</h2>
+      <h2>Get In Touch</h2>
 
       <div class="contact-grid">
         <div class="contact-info">
@@ -558,8 +625,12 @@
           <span class="label">Phone</span>
           <p><a href="tel:+12013662442">(201) 366-2442</a></p>
 
+          <span class="label">Email</span>
+          <p><a href="mailto:alan@bergenpsychologyservices.com">alan@bergenpsychologyservices.com</a></p>
+
+
           <span class="label">Availability</span>
-          <p>In-person and secure telehealth. Flexible scheduling designed to fit your life.</p>
+          <p>In-person and secure telehealth</p>
 
           <span class="label">Licensed In</span>
           <p>New Jersey · New York · Texas</p>
@@ -592,12 +663,18 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Message (optional)</label>
+              <label for="message">Message</label>
               <textarea id="message" name="message"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Request</button>
-            <p class="form-note">Please do not include sensitive personal or health information in this form. Submitting a request does not establish a therapist-client relationship. If you are experiencing an emergency, please contact emergency services.</p>
+            <p class="form-note">Please do not include sensitive personal or health information in this form. Submitting a request does not establish a therapist-client relationship. If you're experiencing an emergency, please contact emergency services or dial 988.</p>
           </form>
+          <script src="https://www.staticforms.dev/scripts/staticforms.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    StaticForms.attach(document.querySelector('form'));
+  });
+</script>
         </div>
       </div>
     </div>
@@ -610,6 +687,8 @@
 <p style="margin-top:8px;"><a href="privacy.html">Privacy Policy</a></p>   
     </div>
   </footer>
+
+  <a href="#contact" class="mobile-cta">Request a Call</a>
 
 </body>
 </html>   
