@@ -42,4 +42,4 @@ Professional background: [FDU faculty profile](https://www.fdu.edu/profiles/a-sh
 
 Good Faith Estimate information: [CMS estimate guidance](https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/get-help/guides-resources/what-good-faith-estimate) and [CMS uninsured/self-pay rights](https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/know-your-rights/without-insurance), checked October 28, 2026. The website notice is not an individualized estimate.
 
-This branch is an unpublished review draft. It does not modify `CNAME`, configure DNS, enroll Search Console, change GitHub Pages settings, or deploy. Confirm the practice copy, contact workflow, and fees before approving publication.
+The practice owner approved publication on October 28, 2026. [Pull request #1](https://github.com/bergenpsychservices/bergen-psych-srvcs-site/pull/1) records the revision and its merge status. The revision preserves `CNAME` and the existing hosting configuration; it does not configure DNS or enroll Search Console. Actual form delivery remains unverified, as described above.

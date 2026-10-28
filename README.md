@@ -2,9 +2,9 @@
 
 Static website for Dr. Alan Sheinfil, PhD. The revision introduces a concise homepage, dedicated therapy and approach pages, clear fees and consultation information, and a shared responsive design.
 
-## Review status
+## Publication
 
-The revision is on `draft/full-site-refinement` for review. It has not been merged or deployed. `main`, `CNAME`, and the existing hosting configuration are unchanged.
+The site is maintained on `main`. This revision was prepared in [pull request #1](https://github.com/bergenpsychservices/bergen-psych-srvcs-site/pull/1) and approved for publication on October 28, 2026. It preserves `CNAME` and the existing hosting configuration. Use a separate branch to review future changes before merging them into `main`.
 
 ## Preview locally
 
