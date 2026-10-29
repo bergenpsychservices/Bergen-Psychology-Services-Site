@@ -43,3 +43,13 @@ Professional background: [FDU faculty profile](https://www.fdu.edu/profiles/a-sh
 Good Faith Estimate information: [CMS estimate guidance](https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/get-help/guides-resources/what-good-faith-estimate) and [CMS uninsured/self-pay rights](https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/know-your-rights/without-insurance), checked October 28, 2026. The website notice is not an individualized estimate.
 
 The practice owner approved publication on October 28, 2026. [Pull request #1](https://github.com/bergenpsychservices/bergen-psych-srvcs-site/pull/1) records the revision and its merge status. The revision preserves `CNAME` and the existing hosting configuration; it does not configure DNS or enroll Search Console. Actual form delivery remains unverified, as described above.
+
+## Navigation and consultation confirmation
+
+Logo, Home, and footer brand links point to `/`, so visitors return to the clean homepage URL. Successful consultation submissions use the documented StaticForms `redirectTo` field to reach the site’s `/thank-you/` page. Its message states that Dr. Sheinfil will reach out within 24–48 hours at the visitor’s preferred contact time, as requested by the practice owner.
+
+The confirmation page uses the shared visual design and provides homepage and FAQ links. It is marked `noindex` and omitted from the sitemap. Form processing remains with StaticForms; the site does not show success before the provider accepts a request.
+
+Reference: [StaticForms success redirect documentation](https://www.staticforms.dev/docs/quick-start).
+
+Verification: checked all 12 pages at five widths, 48 shared homepage links, and 398 internal references. The confirmation page passed desktop/mobile axe checks. Browser checks covered clean homepage navigation, required fields, an intercepted success redirect, a provider error response, and the native form flow with JavaScript disabled. All form submissions were intercepted locally; no email was sent.
