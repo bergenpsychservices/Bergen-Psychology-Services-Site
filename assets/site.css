@@ -813,6 +813,41 @@ summary {
 .mobile-cta {
   display: none;
 }
+.confirmation {
+  padding-block: 76px 88px;
+}
+.confirmation h1 {
+  text-wrap: balance;
+}
+.confirmation-icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 28px;
+  border: 1px solid #a8b8aa;
+  border-radius: 50%;
+  background: #e2e8e1;
+  color: var(--sage);
+}
+.confirmation-icon svg {
+  width: 32px;
+  height: 32px;
+}
+.confirmation .lede {
+  margin-bottom: 24px;
+}
+.confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 32px;
+}
+.confirmation-actions .text-link {
+  margin-top: 0;
+}
+
 @media (min-width: 1600px) {
   .hero {
     padding-block: 85px;
@@ -994,6 +1029,9 @@ summary {
   }
 }
 @media (max-width: 760px) {
+  .confirmation {
+    background-image: none;
+  }
   html {
     scroll-padding-bottom: 110px;
   }

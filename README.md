@@ -25,6 +25,7 @@ Open `http://localhost:8000`. There is no build step or package installation. Th
 - `approach.html`: collaborative CBT/ACT-informed treatment
 - `faq.html`: practical details, fees, insurance, and appointments
 - `get-started.html`: consultation request and contact details
+- `thank-you/index.html`: confirmation at `/thank-you/` after successful form submission
 - `privacy.html`, `good-faith-estimate.html`: website privacy and estimate rights
 - `assets/site.css`, `assets/site.js`: shared styling and navigation enhancements
 - `assets/fonts/`: self-hosted Source Serif 4 and Source Sans 3, with licenses
@@ -33,3 +34,5 @@ Open `http://localhost:8000`. There is no build step or package installation. Th
 Pages are plain HTML. Shared navigation, footer, metadata, and contact details must be kept consistent when editing. Original portrait, favicon, and logo source remain in `Images/`; the recolored logo is in `assets/`.
 
 See [revision notes](docs/REVISION-NOTES.md) for scope, verification, and launch considerations.
+
+Homepage links use `/` for the canonical homepage URL. The consultation form uses StaticForms’ `redirectTo` field to send successful submissions to `https://bergenpsychologyservices.com/thank-you/`. The confirmation page is excluded from the sitemap and has a `noindex` directive.
