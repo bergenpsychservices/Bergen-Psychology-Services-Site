@@ -27,7 +27,7 @@ Open `http://localhost:8000`. There is no build step or package installation. Th
 - `get-started.html`: consultation request and contact details
 - `privacy.html`, `good-faith-estimate.html`: website privacy and estimate rights
 - `assets/site.css`, `assets/site.js`: shared styling and navigation enhancements
-- `assets/fonts/`: self-hosted Fraunces and Source Sans 3, with licenses
+- `assets/fonts/`: self-hosted Source Serif 4 and Source Sans 3, with licenses
 - `sitemap.xml`, `robots.txt`: search discovery
 
 Pages are plain HTML. Shared navigation, footer, metadata, and contact details must be kept consistent when editing. Original portrait, favicon, and logo source remain in `Images/`; the recolored logo is in `assets/`.
